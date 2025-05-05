@@ -65,3 +65,8 @@ A simple Android app for converting currencies using real-time exchange rates. T
    ```bash
    git clone [https://github.com/yourusername/currency-converter.git](https://github.com/yourusername/currency-converter.git)
    cd currency-converter
+
+## 📸 Screenshot
+<p align="center" style="background-color:#f0f0f0;">
+    <img src="/screenshots/currency_converter.gif" alt="Currency Converter" width="200" style="margin-right: 20px;"/>
+</p>
