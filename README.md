@@ -1,16 +1,16 @@
-# Currency Converter
+# 💰 Currency Converter
 
 A simple Android app for converting currencies using real-time exchange rates. This app fetches data from an exchange rate API, allowing users to convert between different currencies and view supported currency codes.
 
-## Features
+## ✨ Features
 
 - **Currency Conversion**: Converts an amount of money from one currency to another using the latest exchange rates.
 - **Supported Currencies**: Displays a list of supported currencies and their codes.
 - **Offline Support**: Caches the conversion data locally using Room database, allowing offline usage of previously fetched data.
-- **Clean Architecture**: Implements a repository pattern for data fetching, with ViewModel and LiveData for UI updates.
+- **Clean Architecture**: Implements a repository pattern for data fetching, with ViewModel  and State/Flow for UI updates.
 - **Edge-to-Edge UI**: Utilizes modern Android UI principles, offering an immersive full-screen experience.
 
-## Technologies Used
+## 🛠️ Technologies Used
 
 - **Kotlin**: Programming language.
 - **Jetpack Compose**: For building the UI.
@@ -19,7 +19,38 @@ A simple Android app for converting currencies using real-time exchange rates. T
 - **Coroutines**: For managing background tasks.
 - **MVVM (Model-View-ViewModel)**: For separation of concerns.
 
-## Setup
+## 📦 Project Structure
+
+```
+- data/
+  - api/
+    - ApiEndpoints.kt          // Defines API endpoints for currency conversion
+    - ConversionResultDao.kt   // DAO for conversion results
+    - CurrencyCodeDao.kt       // DAO for currency codes
+    - DefaultKlient.kt         // Default Ktor HTTP client implementation
+    - Klient.kt                // Interface for HTTP client
+  - db/
+    - CurrencyConverterDatabase.kt // Room database setup
+    - CurrencyConverterTransaction.kt // Handles database transactions
+  - model/
+    - CurrencyEntities.kt      // Defines data entities for the database
+  - repository/
+    - Repository.kt            // Handles data access from API and DB
+- ui/
+  - activity/
+    - MainActivity.kt          // Main activity of the application
+  - theme/
+    // Contains UI theme configurations
+  - viewmodel/
+    - CurrencyConversionViewModel.kt // ViewModel for currency conversion logic
+- util/
+  - ConversionRatesConverter.kt // Converter for handling conversion rates
+  - CurrencyCodeListSerializer.kt // Serializer for currency code lists
+  - networkBoundResource.kt    // Handles data fetching and caching logic
+  - Resource.kt              // Wrapper for resource state (loading)
+```
+
+## 🚀 Setup
 
 ### Prerequisites
 
@@ -31,28 +62,6 @@ A simple Android app for converting currencies using real-time exchange rates. T
 
 1. **Clone the Repository**:
 
-    ```bash
-    git clone https://github.com/yourusername/currency-converter.git
-    cd currency-converter
-    ```
-
-2. **Open the Project in Android Studio**:
-    - Launch Android Studio and open the project.
-
-3. **Add Your API Key**:
-    - Replace the placeholder API key in the `ApiEndpoints` class with your own ExchangeRate-API key.
-
-4. **Build and Run the App**:
-    - Select a device or emulator, then click on the Run button.
-
-### Dependencies
-
-- `Ktor`: For network operations.
-- `Room`: For local database management.
-- `Jetpack Compose`: For the UI components.
-- `Kotlinx Serialization`: For JSON parsing.
-
-To install all dependencies, run:
-
-```bash
-./gradlew build
+   ```bash
+   git clone [https://github.com/yourusername/currency-converter.git](https://github.com/yourusername/currency-converter.git)
+   cd currency-converter
